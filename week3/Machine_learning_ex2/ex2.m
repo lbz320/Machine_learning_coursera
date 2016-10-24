@@ -25,7 +25,7 @@ clear ; close all; clc
 
 data = load('ex2data1.txt');
 X = data(:, [1, 2]); y = data(:, 3);
-fprintf("data loaded")
+
 
 %% ==================== Part 1: Plotting ====================
 %  We start the exercise by first plotting the data to understand the 
