@@ -52,8 +52,22 @@ error_val   = zeros(m, 1);
 %
 
 % ---------------------- Sample Solution ----------------------
-
-
+n = size(Xval, 1);
+for i = 1:m
+    sub_X = X(1:i, :);
+    sub_y = y(1:i, :);
+    
+    theta = trainLinearReg(sub_X, sub_y, lambda);
+    
+    h_train = sum((sub_X*theta - sub_y).^2)*1/(2*i);
+    error_train(i) = h_train;
+    
+    h_val = sum((Xval*theta - yval).^2)*1/(2*n);
+    error_val(i) = h_val;
+    
+end
+    
+    
 
 
 
@@ -62,5 +76,6 @@ error_val   = zeros(m, 1);
 % -------------------------------------------------------------
 
 % =========================================================================
-
+error_val = error_val(:);
+error_train = error_train(:);
 end

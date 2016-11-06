@@ -44,4 +44,3 @@ grad = 1.0/m*transpose(X)*(h - y) + lambda/m*theta;
 grad = grad(:);
 
 end
-z
